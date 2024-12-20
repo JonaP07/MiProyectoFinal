@@ -8,6 +8,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { SigninComponent } from './components/auth/signin/signin.component';
 import { SignupComponent } from './components/auth/signup/signup.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ProductoListComponent } from './components/producto-list/producto-list.component';
+import { ProductoItemComponent } from './components/producto-item/producto-item.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +19,14 @@ import { SignupComponent } from './components/auth/signup/signup.component';
     HeaderComponent,
     HomeComponent,
     SigninComponent,
-    SignupComponent
+    SignupComponent,
+    ProductoListComponent,
+    ProductoItemComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

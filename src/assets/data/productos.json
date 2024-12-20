@@ -19,7 +19,7 @@
   {
     "_id": "2",
     "nombre": "Microfono gris",
-    "descripcion": "blanco",
+    "descripcion": "Gris",
     "categoria": ["Microfono", "Tecnologia"],
     "imageUrl": [
       "../../assets/img/products/technology/2.jpg",

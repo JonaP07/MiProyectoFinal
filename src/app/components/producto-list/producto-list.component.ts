@@ -10,30 +10,35 @@ import { Subscription } from 'rxjs';
 })
 export class ProductoListComponent implements OnInit, OnDestroy {
 
-producto: Producto[] = []; // Propiedad para almacenar los datos
-productoSub: Subscription | undefined
+  // Propiedad para almacenar la lista de productos obtenida desde el servicio.
+  producto: Producto[] = [];
 
-  constructor(private productoService: ProductoService) {}
+  // Propiedad para manejar la suscripción al observable del servicio.
+  productoSub: Subscription | undefined;
 
+  constructor(private productoService: ProductoService) {
+    // Inyección de dependencias: Se recibe el servicio de productos para acceder a sus métodos.
+  }
+
+  // Ciclo de vida `OnInit`: Se ejecuta cuando el componente es inicializado.
   ngOnInit(): void {
+    // Suscripción al servicio para obtener los productos.
     this.productoSub = this.productoService.getProducto()
       .subscribe({
-        next: (producto: Producto[]) => { // Corregido: 'producto' en lugar de 'prducto' como parámetro
-          this.producto = producto; // Asegúrate de que 'producto' existe y tiene la estructura esperada
-          console.log(this.producto);
+        // `next`: Maneja los datos obtenidos.
+        next: (producto: Producto[]) => {
+          this.producto = producto; // Almacena los productos en la propiedad local.
+          console.log(this.producto); // Imprime los datos en la consola para depuración.
         },
         error: (err: any) => {
-          console.error(err); // Sintaxis correcta para manejar errores
+          console.error(err); // Imprime el error en la consola.
         },
         complete: () => {
-          console.log('Completado'); // Mensaje de finalización
+          console.log('Completado');
         }
       });
   }
 
-
   ngOnDestroy(): void {
-
-    this.productoSub?.unsubscribe();
   }
 }

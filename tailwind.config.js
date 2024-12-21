@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  //Tailwind debe buscar clases CSS en archivos HTML y TypeScript
+  // dentro de las carpetas src, pages y components.
   content: [
     "./src/**/*.{html,ts}",
     ".pages/**/*.{html.ts}",

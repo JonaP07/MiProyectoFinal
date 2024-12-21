@@ -14,6 +14,8 @@ import { ProductoItemComponent } from './components/producto-item/producto-item.
 import { ProductoComponent } from './components/producto/producto.component';
 import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
+import { FormsModule } from '@angular/forms';
+import { SoporteComponent } from './components/soporte/soporte.component';
 
 @NgModule({
   declarations: [
@@ -27,12 +29,14 @@ import { ContactoComponent } from './components/contacto/contacto.component';
     ProductoItemComponent,
     ProductoComponent,
     AcercaDeComponent,
-    ContactoComponent
+    ContactoComponent,
+    SoporteComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule, // Permite el uso de peticiones HTTP.
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

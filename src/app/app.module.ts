@@ -11,6 +11,9 @@ import { SignupComponent } from './components/auth/signup/signup.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductoListComponent } from './components/producto-list/producto-list.component';
 import { ProductoItemComponent } from './components/producto-item/producto-item.component';
+import { ProductoComponent } from './components/producto/producto.component';
+import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { ProductoItemComponent } from './components/producto-item/producto-item.
     SigninComponent,
     SignupComponent,
     ProductoListComponent,
-    ProductoItemComponent
+    ProductoItemComponent,
+    ProductoComponent,
+    AcercaDeComponent,
+    ContactoComponent
   ],
   imports: [
     BrowserModule,
